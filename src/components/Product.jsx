@@ -7,13 +7,18 @@ import Flex from './Flex'
 import { AiFillHeart } from 'react-icons/ai';
 import { BiGitCompare } from 'react-icons/bi';
 import { BsFillCartFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom'
+import Container from './Container'
 
 const Product = ({text}) => {
   return (
-   <div className='mx-10'>
+  <Container>
+     <div className='mx-10'>
      <div className=' relative overflow-hidden group'>
         <Image src={img} className="w-full"/>
-        <Badge text="New"/>
+        <Link to={"/abrar/rahi"}>
+          <Badge text="New"/>
+        </Link>
 
         <div className='bg-white p-5 absolute -bottom-32 left-0 w-full group-hover:bottom-0 duration-500'>
                 <Flex className='items-center justify-end  gap-x-4'>
@@ -37,6 +42,7 @@ const Product = ({text}) => {
                 </Flex>
        </div>
    </div>
+  </Container>
   )
 }
 

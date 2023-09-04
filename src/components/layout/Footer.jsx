@@ -1,41 +1,49 @@
 import React from 'react'
-import Flex from './Flex'
-import PortionHeading from './PortionHeading'
-import List from './List'
-import Image from './Image'
-import logo from "../assets/logo.png"
+import Flex from '../../components/Flex'
+import PortionHeading from '../../components/PortionHeading'
+import List from '../../components/List'
+import Image from '../../components/Image'
+import logo from "../../assets/logo.png"
 import {BiLogoFacebook} from "react-icons/bi"
 import {BiLogoLinkedin} from "react-icons/bi"
 import {BiLogoInstagram} from "react-icons/bi"
-import Paragraph from './Paragraph'
+import Paragraph from '../../components/Paragraph'
+import Container from '../Container'
 
 const Footer = () => {
   return (
-    <footer>
-        <Flex className="gap-x-36 mb-16" >
+    <footer className='bg-ash'>
+       <Container className="py-16">
+       <Flex className="gap-x-36 mb-16" >
             <div>
               <PortionHeading text="MENU" className="mb-4"/>
-              <List text="Home" className="mb-1.5"/>
-              <List text="Shop" className="mb-1.5"/>
-              <List text="About" className="mb-1.5"/>
-              <List text="Contact" className="mb-1.5"/>
+              <ul className='flex flex-col gap-y-1.5'>
+              <List text="Home" />
+              <List text="Shop" />
+              <List text="About" />
+              <List text="Contact" />
               <List text="Journal" />
+              </ul>
             </div>
             <div>
               <PortionHeading text="SHOP" className="mb-4"/>
-              <List text="Category 1" className="mb-1.5"/>
-              <List text="Category 2" className="mb-1.5"/>
-              <List text="Category 3" className="mb-1.5"/>
-              <List text="Category 4" className="mb-1.5"/>
+              <ul className='flex flex-col gap-y-1.5'>
+              <List text="Category 1" />
+              <List text="Category 2" />
+              <List text="Category 3" />
+              <List text="Category 4" />
               <List text="Category 5" />
+              </ul>
             </div>
             <div>
               <PortionHeading text="HELP" className="mb-4"/>
-              <List text="Privacy Policy" className="mb-1.5"/>
-              <List text="Terms & Conditions" className="mb-1.5"/>
-              <List text="Special E-shop" className="mb-1.5"/>
-              <List text="Shipping" className="mb-1.5"/>
-              <List text="Secure Payments" />
+              <ul className='flex flex-col gap-y-1.5'>
+              <List text="Privacy Policy"/>
+              <List text="Terms & Conditions"/>
+              <List text="Special E-shop"/>
+              <List text="Shipping"/>
+              <List text="Secure Payments"/>
+              </ul>
             </div>
             <div>
                 <PortionHeading text="(052) 611-5711" className=""/>
@@ -43,7 +51,7 @@ const Footer = () => {
                 <Paragraph text="575 Crescent Ave. Quakertown, PA 18951" className="text-sm"/>
             </div>
             <div>
-                <Image src={logo} alt="alt" className="ml-24" />
+                <Image src={logo} alt="alt" className="ml-36" />
             </div>
         </Flex>
 
@@ -56,6 +64,7 @@ const Footer = () => {
                 
             <Paragraph text="2020 Orebi Minimal eCommerce F igma Template by Adveits" className="text-sm"/>
         </Flex>
+       </Container>
     </footer>
   )
 }

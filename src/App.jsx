@@ -6,65 +6,75 @@ import Facilities from "./components/Facilities"
 import SubHeading from "./components/SubHeading"
 import PortionHeading from "./components/PortionHeading"
 import Button from "./components/Button"
-import Product from "./components/Product"
+
 import Flex from "./components/Flex"
-import "slick-carousel/slick/slick.css"; 
-import Slider from "react-slick";
-import PrevArrows from "./components/PrevArrows"
-import NextArrows from "./components/NextArrows"
-import Footer from "./components/Footer"
+
+import Footer from "./components/layout/Footer"
+import Slid from "./components/slid"
+import Container from "./components/Container"
+import Product from "./components/Product"
+
+import {
+  createRoutesFromElements,
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+  Link,
+} from "react-router-dom";
+import RootLayout from "./components/RootLayout"
+import Errorpage from "./pages/Errorpage"
+
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    
+      <>
+
+     <Route
+        path="/"
+        element={<RootLayout/>}>
+           
+            <Route
+              path="/"
+              element={<Facilities />}
+            ></Route>
+
+            <Route
+              path="/abrar"
+              element={<Product/>}
+            ></Route>
+
+            <Route
+              path="/abrar/rahi"
+              element={<Slid/>}
+            ></Route>
+
+            <Route
+              path="*"
+              element={<Errorpage/>}
+            ></Route>
+      </Route>
+
+      
+      
+      </>
+    
+  )
+);
 
 
 function App() {
   
-  const settings = {
-    
-    
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    nextArrow: <NextArrows />,
-    prevArrow: <PrevArrows/>
-  };
+  
+  
 
   return (
     <>
     
-    <List text="abrar"/>
-      <Image src={img}/>
-      <Facilities/>
-      <SubHeading text="sub Heading" className="text-49" />
-      <PortionHeading text="portion heading"/>
-      <Button text="add to cart"/>
-
-      <Flex className="gap-x-5">
-      <Product/>
-      <Product/>
-      </Flex>
-
-      <Slider {...settings}>
-          <div>
-          <Product/>
-          </div>
-          <div>
-          <Product/>
-          </div>
-          <div>
-          <Product/>
-          </div>
-          <div>
-          <Product/>
-          </div>
-          <div>
-          <Product/>
-          </div>
-          <div>
-          <Product/>
-          </div>
-        </Slider>
-
-        <Footer/>
+    <RouterProvider router={router} />
+    
+    
+        
     </>
   )
 }

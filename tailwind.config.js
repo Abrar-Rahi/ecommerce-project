@@ -12,7 +12,15 @@ export default {
       fontSize: {
         '39' : '39px',
         '49' : '49px',
-      }
+      },
+      maxWidth: {
+        'container': '1604px',
+        '644': '644px',
+      },
+      colors: {
+        'ash': '#F5F5F3',
+        'ash0': '#F0F0F0',
+      },
     },
   },
   plugins: [],
