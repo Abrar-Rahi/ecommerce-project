@@ -3,7 +3,7 @@ import Flex from '../../components/Flex'
 import PortionHeading from '../../components/PortionHeading'
 import List from '../../components/List'
 import Image from '../../components/Image'
-import logo from "../../assets/logo.png"
+import logo from "../../assets/Logo.png"
 import {BiLogoFacebook} from "react-icons/bi"
 import {BiLogoLinkedin} from "react-icons/bi"
 import {BiLogoInstagram} from "react-icons/bi"

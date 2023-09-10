@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '../Container'
 import Flex from '../Flex'
 import Image from '../Image'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/Logo.png'
 import List from '../List'
 import { Link } from 'react-router-dom'
 import {pagename} from "../../slices/breadcrumbSlice"
