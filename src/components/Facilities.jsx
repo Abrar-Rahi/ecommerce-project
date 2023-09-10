@@ -26,6 +26,7 @@ const Facilities = () => {
         <ReturnIcon />
         <p>Return policy in 30 days</p>
         </div>
+        
     </Container>
   )
 }

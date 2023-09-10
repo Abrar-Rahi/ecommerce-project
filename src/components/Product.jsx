@@ -16,9 +16,9 @@ const Product = ({text}) => {
      <div className='mx-10'>
      <div className=' relative overflow-hidden group'>
         <Image src={img} className="w-full"/>
-        <Link to={"/abrar/rahi"}>
+        
           <Badge text="New"/>
-        </Link>
+        
 
         <div className='bg-white p-5 absolute -bottom-32 left-0 w-full group-hover:bottom-0 duration-500'>
                 <Flex className='items-center justify-end  gap-x-4'>
@@ -42,6 +42,7 @@ const Product = ({text}) => {
                 </Flex>
        </div>
    </div>
+   
   </Container>
   )
 }

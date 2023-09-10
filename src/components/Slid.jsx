@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import PrevArrows from "./PrevArrows"
 import NextArrows from "./NextArrows"
 import Product from "./Product"
-import { Link } from 'react-router-dom';
+
 import Container from './Container';
 
 const Slid = () => {
@@ -19,11 +19,11 @@ const Slid = () => {
   return (
     <Container>
       <Slider {...settings}>
-      <Link to={"/"}>
+      
           <div>
           <Product/>
           </div>
-      </Link>
+     
           <div>
           <Product/>
           </div>

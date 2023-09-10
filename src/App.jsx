@@ -1,17 +1,5 @@
 import "./App.css"
-import Image from "./components/Image"
-import List from "./components/List"
-import img from "./assets/img1.webp"
-import Facilities from "./components/Facilities"
-import SubHeading from "./components/SubHeading"
-import PortionHeading from "./components/PortionHeading"
-import Button from "./components/Button"
 
-import Flex from "./components/Flex"
-
-import Footer from "./components/layout/Footer"
-import Slid from "./components/slid"
-import Container from "./components/Container"
 import Product from "./components/Product"
 
 import {
@@ -23,12 +11,16 @@ import {
 } from "react-router-dom";
 import RootLayout from "./components/RootLayout"
 import Errorpage from "./pages/Errorpage"
+import Signuppage from "./pages/Signuppage"
+import Homepage from "./pages/Homepage"
+
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     
       <>
+      
 
      <Route
         path="/"
@@ -36,17 +28,17 @@ const router = createBrowserRouter(
            
             <Route
               path="/"
-              element={<Facilities />}
+              element={<Homepage />}
             ></Route>
 
             <Route
-              path="/abrar"
+              path="/shop"
               element={<Product/>}
             ></Route>
 
             <Route
-              path="/abrar/rahi"
-              element={<Slid/>}
+              path="/sign-up"
+              element={<Signuppage/>}
             ></Route>
 
             <Route

@@ -6,8 +6,12 @@ import {BsSearch} from 'react-icons/bs'
 import {FaUserAlt,FaShoppingCart} from 'react-icons/fa'
 import {GoTriangleDown} from 'react-icons/go'
 import Paragraph from '../Paragraph'
+import { Link } from 'react-router-dom'
 
 const Searchbox = () => {
+  let handleBreadCrumb = (name)=>{
+    console.log(name);
+  }
   return (
     <section className='py-10 bg-ash'>
       <Container>
@@ -24,7 +28,9 @@ const Searchbox = () => {
             </div>
             <Flex className='w-1/5 gap-x-10 justify-end'>
               <Flex className="gap-x-1">
-                <FaUserAlt/>
+                <Link onClick={()=> handleBreadCrumb("Sign up")} to={"/sign-up"}>
+                   <FaUserAlt/>
+                </Link>
                 <GoTriangleDown/>
               </Flex>
                 <FaShoppingCart/>

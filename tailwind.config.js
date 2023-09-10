@@ -20,6 +20,7 @@ export default {
       colors: {
         'ash': '#F5F5F3',
         'ash0': '#F0F0F0',
+        '6d': '#6D6D60',
       },
     },
   },
