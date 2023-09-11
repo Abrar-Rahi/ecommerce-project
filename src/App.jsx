@@ -13,6 +13,9 @@ import RootLayout from "./components/RootLayout"
 import Errorpage from "./pages/Errorpage"
 import Signuppage from "./pages/Signuppage"
 import Homepage from "./pages/Homepage"
+import Login from "./pages/Login";
+import Contactpage from "./pages/Contactpage";
+import Checkoutpage from "./pages/Checkoutpage";
 
 
 
@@ -39,6 +42,18 @@ const router = createBrowserRouter(
             <Route
               path="/sign-up"
               element={<Signuppage/>}
+            ></Route>
+            <Route
+              path="/login"
+              element={<Login/>}
+            ></Route>
+            <Route
+              path="/contacts"
+              element={<Contactpage/>}
+            ></Route>
+            <Route
+              path="/checkout"
+              element={<Checkoutpage/>}
             ></Route>
 
             <Route

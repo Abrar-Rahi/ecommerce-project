@@ -6,7 +6,7 @@ import logo from '../../assets/Logo.png'
 import List from '../List'
 import { Link } from 'react-router-dom'
 import {pagename} from "../../slices/breadcrumbSlice"
-import { useDispatch,useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const Navbar = () => {
 
@@ -28,6 +28,14 @@ const Navbar = () => {
             <div className='w-1/5'>
                 <Image src={logo}/>
             </div>
+            <Flex className="gap-x-4">
+              <Link onClick={()=>handleBreadCrumb("Login")} to={"/login"}>
+                <List text="Login"/>
+              </Link>
+              <Link onClick={()=>handleBreadCrumb("Checkout")} to={"/checkout"}>
+                <List text="Checkout"/>
+              </Link>
+            </Flex>
             <div className='w-4/5'>
                 <ul className='flex justify-end gap-x-10'>
                     <Link onClick={()=>handleBreadCrumb("Home")} to={"/"}>
@@ -37,7 +45,9 @@ const Navbar = () => {
                       <List text="Shop"/>
                     </Link>
                     <List text="About"/>
-                    <List text="Contact"/>
+                  <Link onClick={()=>handleBreadCrumb("Contacts")} to={"/contacts"}>
+                    <List text="Contacts"/>
+                  </Link>
                     <List text="Journal"/>
                 </ul>
             </div>

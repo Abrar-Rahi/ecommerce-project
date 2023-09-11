@@ -7,10 +7,14 @@ import {FaUserAlt,FaShoppingCart} from 'react-icons/fa'
 import {GoTriangleDown} from 'react-icons/go'
 import Paragraph from '../Paragraph'
 import { Link } from 'react-router-dom'
+import {useDispatch } from 'react-redux';
+import { pagename } from '../../slices/breadcrumbSlice'
+
 
 const Searchbox = () => {
+  let dispatch =useDispatch()
   let handleBreadCrumb = (name)=>{
-    console.log(name);
+    dispatch(pagename(name))
   }
   return (
     <section className='py-10 bg-ash'>
