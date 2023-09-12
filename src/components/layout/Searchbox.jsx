@@ -32,7 +32,7 @@ const Searchbox = () => {
             </div>
             <Flex className='w-1/5 gap-x-10 justify-end'>
               <Flex className="gap-x-1">
-                <Link onClick={()=> handleBreadCrumb("Sign up")} to={"/sign-up"}>
+                <Link to={"/sign-up"} onClick={()=> handleBreadCrumb("Sign up")} >
                    <FaUserAlt/>
                 </Link>
                 <GoTriangleDown/>

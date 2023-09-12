@@ -27,7 +27,7 @@ const Signuppage = () => {
         <Container>
          <SubHeading text="Sign up" className="text-49 mt-32"/>
          <Flex className="items-center">
-          <Link to={breadcrumbName == "Home" ? "/":`/${breadcrumbName.toLowerCase()}`}>
+          <Link to={breadcrumbName == "Home" ? "/" : breadcrumbName == "Sign up" ? "/sign-up" : `/${breadcrumbName.toLowerCase()}`}>
             <p className='font-dm font-normal text-xs text-6d'>{breadcrumbName}</p>
           </Link>
             <FaAngleRight className='text-6d text-xs mx-1'/>

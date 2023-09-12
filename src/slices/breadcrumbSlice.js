@@ -8,6 +8,7 @@ export const breadcrumbSlice = createSlice({
   },
   reducers: {
     pagename: (state,action) => {
+      
         state.previousname = state.currentname
         state.currentname = action.payload
         
