@@ -8,16 +8,22 @@ import { Link } from 'react-router-dom'
 import Button from '../components/Button'
 import Image from '../components/Image'
 import map from '../assets/map.png'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
+import {pagename} from "../slices/breadcrumbSlice"
 
 
 const Contactpage = () => {
   const breadcrumbName = useSelector((state)=>state.breadcrumb.previousname)
+  let dispatch = useDispatch()
+    let handleBreadCrumb = (name)=>{
+        dispatch(pagename(name))
+        console.log(name);
+    }
   return (
     <Container className="mb-36">
          <SubHeading text="Contacts" className="text-49 mt-32"/>
          <Flex className="items-center">
-         <Link to={breadcrumbName == "Home" ? "/" : breadcrumbName == "Sign up" ? "/sign-up" : `/${breadcrumbName.toLowerCase()}`}>
+         <Link onClick={()=>handleBreadCrumb(breadcrumbName)} to={breadcrumbName == "Home" ? "/" : breadcrumbName == "Sign up" ? "/sign-up" : `/${breadcrumbName.toLowerCase()}`}>
             <p className='font-dm font-normal text-xs text-6d'>{breadcrumbName}</p>
           </Link>
             <FaAngleRight className='text-6d text-xs mx-1'/>

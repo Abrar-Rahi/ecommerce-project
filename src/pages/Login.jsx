@@ -6,17 +6,24 @@ import Flex from '../components/Flex'
 import PortionHeading from '../components/PortionHeading'
 import {FaAngleRight} from 'react-icons/fa'
 import Button from '../components/Button'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
+import {pagename} from "../slices/breadcrumbSlice"
 import { Link } from 'react-router-dom'
 
 const Login = () => {
     let breadcrumbName = useSelector((state)=>state.breadcrumb.previousname)
+    let dispatch = useDispatch()
+    let handleBreadCrumb = (name)=>{
+        dispatch(pagename(name))
+        console.log(name);
+    }
   return (
     <Container>
         <SubHeading text="Login" className="text-49 mt-32"/>
         <Flex className="items-center">
-        <Link to={breadcrumbName == "Home" ? "/" : breadcrumbName == "Sign up" ? "/sign-up" : `/${breadcrumbName.toLowerCase()}`}>
+        <Link onClick={()=>handleBreadCrumb(breadcrumbName)} to={breadcrumbName == "Home" ? "/" : breadcrumbName == "Sign up" ? "/sign-up" : `/${breadcrumbName.toLowerCase()}`}>
             <p className='font-dm font-normal text-xs text-6d'>{breadcrumbName}</p>
+            
           </Link>
             <FaAngleRight className='text-6d text-xs mx-1'/>
              <p className='first-letter:uppercase font-dm font-normal text-xs text-6d'>{window.location.pathname.replace("/","")}</p>
@@ -48,5 +55,17 @@ const Login = () => {
     </Container>
   )
 }
+
+// {breadcrumbName.toLowerCase()==window.location.pathname.replace("/","") ?
+// <p className='first-letter:uppercase font-dm font-normal text-xs text-6d'>{window.location.pathname.replace("/","")}</p>
+// :
+// <>
+// <Link to={breadcrumbName == "Home" ? "/" : breadcrumbName == "Sign up" ? "/sign-up" : `/${breadcrumbName.toLowerCase()}`}>
+//  <p className='font-dm font-normal text-xs text-6d'>{breadcrumbName}</p>
+// </Link>
+//  <FaAngleRight className='text-6d text-xs mx-1'/>
+//   <p className='first-letter:uppercase font-dm font-normal text-xs text-6d'>{window.location.pathname.replace("/","")}</p>
+// </>
+// }
 
 export default Login

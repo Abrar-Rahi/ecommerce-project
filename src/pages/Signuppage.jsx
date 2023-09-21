@@ -4,17 +4,21 @@ import SubHeading from '../components/SubHeading'
 import Paragraph from '../components/Paragraph'
 import PortionHeading from '../components/PortionHeading'
 import Button from '../components/Button'
-import { useSelector} from 'react-redux';
-
-
 import Flex from '../components/Flex';
 import {FaAngleRight} from "react-icons/fa"
 import { Link } from 'react-router-dom';
 import division from '../division/division'
+import { useSelector,useDispatch } from 'react-redux'
+import {pagename} from "../slices/breadcrumbSlice"
 
 const Signuppage = () => {
   
     const breadcrumbName = useSelector((state)=>state.breadcrumb.previousname)
+    let dispatch = useDispatch()
+    let handleBreadCrumb = (name)=>{
+        dispatch(pagename(name))
+        console.log(name);
+    }
 
     let [divisionName,setDivisionName] = useState(division)
     let [distric,setDistric] = useState("")
@@ -27,7 +31,7 @@ const Signuppage = () => {
         <Container>
          <SubHeading text="Sign up" className="text-49 mt-32"/>
          <Flex className="items-center">
-          <Link to={breadcrumbName == "Home" ? "/" : breadcrumbName == "Sign up" ? "/sign-up" : `/${breadcrumbName.toLowerCase()}`}>
+          <Link onClick={()=>handleBreadCrumb(breadcrumbName)} to={breadcrumbName == "Home" ? "/" : breadcrumbName == "Sign up" ? "/sign-up" : `/${breadcrumbName.toLowerCase()}`}>
             <p className='font-dm font-normal text-xs text-6d'>{breadcrumbName}</p>
           </Link>
             <FaAngleRight className='text-6d text-xs mx-1'/>

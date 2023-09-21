@@ -16,6 +16,7 @@ import Homepage from "./pages/Homepage"
 import Login from "./pages/Login";
 import Contactpage from "./pages/Contactpage";
 import Checkoutpage from "./pages/Checkoutpage";
+import About from "./pages/About";
 
 
 
@@ -54,6 +55,10 @@ const router = createBrowserRouter(
             <Route
               path="/checkout"
               element={<Checkoutpage/>}
+            ></Route>
+            <Route
+              path="/about"
+              element={<About/>}
             ></Route>
 
             <Route

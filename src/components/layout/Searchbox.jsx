@@ -1,21 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Flex from '../Flex'
 import Container from '../Container'
 import {BiMenuAltLeft} from 'react-icons/bi'
 import {BsSearch} from 'react-icons/bs'
 import {FaUserAlt,FaShoppingCart} from 'react-icons/fa'
 import {GoTriangleDown} from 'react-icons/go'
+import {RxCross2} from 'react-icons/rx'
 import Paragraph from '../Paragraph'
 import { Link } from 'react-router-dom'
-import {useDispatch } from 'react-redux';
+import {useDispatch, useSelector } from 'react-redux';
 import { pagename } from '../../slices/breadcrumbSlice'
 
 
 const Searchbox = () => {
+  
+  let [openCart,setOpenCart] = useState(false)
+
   let dispatch =useDispatch()
   let handleBreadCrumb = (name)=>{
     dispatch(pagename(name))
+    console.log(name);
   }
+
+  let cart = useSelector(state=> state.cart.cartItem)
   return (
     <section className='py-10 bg-ash'>
       <Container>
@@ -32,14 +39,25 @@ const Searchbox = () => {
             </div>
             <Flex className='w-1/5 gap-x-10 justify-end'>
               <Flex className="gap-x-1">
-                <Link to={"/sign-up"} onClick={()=> handleBreadCrumb("Sign up")} >
+                <Link onClick={()=> handleBreadCrumb("Sign up")} to={"/sign-up"}>
                    <FaUserAlt/>
                 </Link>
                 <GoTriangleDown/>
               </Flex>
-                <FaShoppingCart/>
+                <FaShoppingCart className='cursor-pointer' onClick={()=>setOpenCart(true)}/>{cart.length}
             </Flex>
          </Flex>
+
+         {openCart &&
+         <div className='w-1/4 h-screen bg-red-300 absolute top-0 right-0 z-10'>
+             <RxCross2 className='text-5xl cursor-pointer' onClick={()=>setOpenCart(false)}/>
+            <ul>
+            {cart.map(item=>(
+               <li>{item.title} - {item.quantity}</li>
+               ))}
+            </ul>
+         </div>
+         }
       </Container>
     </section>
   )

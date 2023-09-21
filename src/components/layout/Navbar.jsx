@@ -15,6 +15,7 @@ const Navbar = () => {
   let handleBreadCrumb = (name)=>{
     
     dispatch(pagename(name))
+    console.log(name);
   }
 
   
@@ -41,12 +42,17 @@ const Navbar = () => {
                     <Link onClick={()=>handleBreadCrumb("Home")} to={"/"}>
                       <List text="Home" />
                     </Link>
+
                     <Link onClick={()=> handleBreadCrumb("Shop")} to={"/shop"}>
                       <List text="Shop"/>
                     </Link>
-                    <List text="About"/>
+
+                    <Link onClick={()=>handleBreadCrumb("About")} to={"/about"}>
+                      <List text="About"/>
+                    </Link>
+
                   <Link onClick={()=>handleBreadCrumb("Contacts")} to={"/contacts"}>
-                    <List text="Contacts"/>
+                     <List text="Contacts"/>
                   </Link>
                     <List text="Journal"/>
                 </ul>

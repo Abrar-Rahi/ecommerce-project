@@ -12,6 +12,7 @@ export default {
       fontSize: {
         '39' : '39px',
         '49' : '49px',
+        '25' : '25px',
       },
       maxWidth: {
         'container': '1604px',
@@ -24,6 +25,8 @@ export default {
         '507': '507px',
         '1055': '1055px',
         '644': '644px',
+        '140': '140px',
+        '37%': '37%',
         
       },
       colors: {
@@ -32,6 +35,7 @@ export default {
         '6d': '#6D6D60',
         '76': '#767676',
         'blk26': '#262626',
+        'bannerBG': '#f5f7f9',
       },
     },
   },

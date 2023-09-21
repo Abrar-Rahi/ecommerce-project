@@ -1,8 +1,8 @@
 import React from 'react'
 
-const PortionHeading = ({text,className}) => {
+const PortionHeading = ({className,text}) => {
   return (
-    <h5 className={`font-db font-bold text-base ${className}`}>{text}</h5>
+    <h5 className={`font-db text-base font-bold ${className}`}>{text}</h5>
   )
 }
 

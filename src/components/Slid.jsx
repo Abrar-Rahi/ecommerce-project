@@ -4,6 +4,13 @@ import Slider from "react-slick";
 import PrevArrows from "./PrevArrows"
 import NextArrows from "./NextArrows"
 import Product from "./Product"
+import img from "../assets/img1.webp"
+import watch from "../assets/watch.webp"
+import tableWatch from "../assets/tableWatch.webp"
+import toy from "../assets/toy.webp"
+import glass from "../assets/glass.webp"
+import cap from "../assets/cap.webp"
+
 
 import Container from './Container';
 
@@ -19,26 +26,24 @@ const Slid = () => {
   return (
     <Container>
       <Slider {...settings}>
-      
-          <div>
-          <Product/>
-          </div>
-     
-          <div>
-          <Product/>
-          </div>
-          <div>
-          <Product/>
-          </div>
-          <div>
-          <Product/>
-          </div>
-          <div>
-          <Product/>
-          </div>
-          <div>
-          <Product/>
-          </div>
+        <div>
+          <Product src={img}  className="mx-5" productName="Basic Crew Neck Tee"/>
+        </div>
+        <div>
+          <Product src={watch} className="mx-5" productName="Basic Crew Neck Tee"/>
+        </div>
+        <div>
+          <Product src={tableWatch} className="mx-5" productName="Basic Crew Neck Tee"/>
+        </div>
+        <div>
+          <Product src={toy} className="mx-5" productName="Basic Crew Neck Tee"/>
+        </div>
+        <div>
+          <Product src={glass} className="mx-5" productName="Basic Crew Neck Tee"/>
+        </div>
+        <div>
+          <Product src={cap} className="mx-5" productName="Basic Crew Neck Tee"/>
+        </div>
       </Slider>
     </Container>
   )
