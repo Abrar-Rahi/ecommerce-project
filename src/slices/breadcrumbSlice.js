@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const breadcrumbSlice = createSlice({
   name: 'breadcrumbSlice',
   initialState: {
-    currentname: "",
+    currentname: "home",
     previousname : ""
   },
   reducers: {

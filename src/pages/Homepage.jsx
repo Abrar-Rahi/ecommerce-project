@@ -54,7 +54,6 @@ const Homepage = () => {
     <Container>
       <SubHeading className="mb-12" text="New Arrivals"/>
       <Slid/>
-
     </Container>
   </section>
 

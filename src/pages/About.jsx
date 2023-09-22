@@ -22,16 +22,20 @@ const About = () => {
     <>
     <Container className="py-32">
     <SubHeading text="About" className="text-49 "/>
-        <Flex className="items-center">
 
+       {breadcrumbName.toLowerCase()==window.location.pathname.replace("/","") ?
+        <p className='first-letter:uppercase font-dm font-normal text-xs text-6d'>/{window.location.pathname.replace("/","")}</p>
+        :
+         <>
+        <Flex className="items-center">
         <Link onClick={()=>handleBreadCrumb(breadcrumbName)} to={breadcrumbName == "Home" ? "/" : breadcrumbName == "Sign up" ? "/sign-up" : `/${breadcrumbName.toLowerCase()}`}>
-            <p className='font-dm font-normal text-xs text-6d'>{breadcrumbName}</p>
-            
-        </Link>
-            
+            <p className='font-dm font-normal text-xs text-6d'>{breadcrumbName}</p> 
+       </Link>
         <FaAngleRight className='text-6d text-xs mx-1'/>
         <p className='first-letter:uppercase font-dm font-normal text-xs text-6d'>{window.location.pathname.replace("/","")}</p>
         </Flex>
+         </>
+       }
 
 
         <Flex className="gap-x-10">
