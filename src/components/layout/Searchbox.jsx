@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 import {useDispatch, useSelector } from 'react-redux';
 import { pagename } from '../../slices/breadcrumbSlice'
 import { increase,decrease,remove,sidecart } from '../../slices/cartSlice'
+import Button from '../Button'
 
 
 const Searchbox = () => {
@@ -103,7 +104,12 @@ const Searchbox = () => {
           :
           <h1 className='text-center font-pop font-bold text-xl'>Cart is empty</h1>
         }
-          <h1 className='text-end mt-10 mr-2'>subTotal: {subTotal}</h1> 
+          <h1 className='text-end mt-10 mr-2'>subTotal: {subTotal}</h1>
+          <div className='text-center'>
+            <Link to={"/cart"} onClick={()=> dispatch(sidecart(false))}>
+               <Button text="Go To Cart" className="mt-10"/> 
+            </Link>
+          </div>
       </div>
     }
       </Container>
