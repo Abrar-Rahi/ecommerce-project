@@ -19,21 +19,22 @@ import secAdd from '../assets/2ndAdd.webp'
 import flowerTop from '../assets/flowerTop.webp'
 import Facilities from '../components/Facilities'
 import Slid from '../components/Slid'
+import {FaShoppingCart} from 'react-icons/fa'
 
 const Homepage = () => {
   return (
    <>
               {/* banner section */}
-  <section className='pb-140'>
+  {/* <section className='pb-140'>
       <div className='bg-bannerBG'>
         <Image src={banner} className="mx-auto"/>
       </div>
       <Facilities className=" py-5 border-y border-solid border-ash0"/>
-  </section>
+  </section> */}
 
               {/* add section start*/}
 
-  <section className='pb-32'>
+  {/* <section className='pb-32'>
     <Container>
     <Flex className="gap-x-10">
       <div className='w-1/2'>
@@ -45,22 +46,27 @@ const Homepage = () => {
       </div>
     </Flex>
     </Container>
-  </section>
+  </section> */}
                {/* add section end*/}
 
                {/* New arrival section start*/}
 
-  <section className='pb-32'>
+  {/* <section className='pb-32'>
     <Container>
       <SubHeading className="mb-12" text="New Arrivals"/>
       <Slid/>
     </Container>
-  </section>
+  </section> */}
 
                 {/* New arrival section end*/}
 
 
                 {/* Bestsellers section start*/}
+
+  <div className='w-16 h-16 bg-ash0 fixed right-0 top-1/2 rounded-full  '>
+    <FaShoppingCart className='text-2xl absolute top-24% left-29% '/>
+    <p className='absolute bottom-0 left-[36%] w-5 h-5  rounded-full'> <span className='ml-1.5'>0</span></p>
+  </div>
 
   <section className='pb-32'>
     <Container>
@@ -77,26 +83,26 @@ const Homepage = () => {
 
                 
                 {/* add section start*/}
-  <Container className="pb-32">
+  {/* <Container className="pb-32">
     <Image src={secAdd}/>
-  </Container>              
+  </Container>               */}
                 {/* add section end*/}
 
                 
-                {/* Bestsellers section start*/}
+                {/* Special Offers section start*/}
 
   <section className='pb-36'>
     <Container>
       <SubHeading className="mb-12" text="Special Offers"/>
         <Flex>
-          <Product src={glass} productName="Basic Crew Neck Tee"/>
-          <Product src={table} productName="Basic Crew Neck Tee"/>
-          <Product src={cap} productName="Basic Crew Neck Tee"/>
-          <Product src={headphone} productName="Basic Crew Neck Tee"/>
+          <Product src={glass} productName="Sun Glass"/>
+          <Product src={table} productName="Tea Table"/>
+          <Product src={cap} productName="Head Cap"/>
+          <Product src={headphone} productName="Headphone"/>
         </Flex>
     </Container>
     </section>              
-                {/* Bestsellers section end*/}
+                {/* Special Offers section end*/}
 
 
 

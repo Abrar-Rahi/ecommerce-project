@@ -17,6 +17,8 @@ import Login from "./pages/Login";
 import Contactpage from "./pages/Contactpage";
 import Checkoutpage from "./pages/Checkoutpage";
 import About from "./pages/About";
+import Cartpage from "./pages/Cartpage";
+
 
 
 
@@ -26,45 +28,18 @@ const router = createBrowserRouter(
       <>
       
 
-     <Route
-        path="/"
-        element={<RootLayout/>}>
+     <Route path="/" element={<RootLayout/>}>
            
-            <Route
-              path="/"
-              element={<Homepage />}
-            ></Route>
+            <Route path="/" element={<Homepage />}></Route>
+            <Route path="/shop" element={<Product/>}></Route>
+            <Route path="/sign-up" element={<Signuppage/>}></Route>
+            <Route  path="/login" element={<Login/>} ></Route>
+            <Route path="/contacts" element={<Contactpage/>}></Route>
+            <Route path="/checkout" element={<Checkoutpage/>} ></Route>
+            <Route path="/about" element={<About/>}></Route>
+            <Route path="/cart" element={<Cartpage/>}></Route>
+            <Route path="*" element={<Errorpage/>}></Route>
 
-            <Route
-              path="/shop"
-              element={<Product/>}
-            ></Route>
-
-            <Route
-              path="/sign-up"
-              element={<Signuppage/>}
-            ></Route>
-            <Route
-              path="/login"
-              element={<Login/>}
-            ></Route>
-            <Route
-              path="/contacts"
-              element={<Contactpage/>}
-            ></Route>
-            <Route
-              path="/checkout"
-              element={<Checkoutpage/>}
-            ></Route>
-            <Route
-              path="/about"
-              element={<About/>}
-            ></Route>
-
-            <Route
-              path="*"
-              element={<Errorpage/>}
-            ></Route>
       </Route>
 
       

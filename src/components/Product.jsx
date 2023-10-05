@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from './Image'
-
 import Badge from './Badge'
 import PortionHeading from './PortionHeading'
 import Flex from './Flex'
@@ -9,17 +8,20 @@ import { BiGitCompare } from 'react-icons/bi';
 import { BsFillCartFill } from 'react-icons/bs';
 import Container from './Container'
 import { addtocart } from '../slices/cartSlice'
-import { useDispatch } from 'react-redux'
+import {useDispatch } from 'react-redux';
+import { sidecart } from '../slices/cartSlice'
 
 const Product = ({productName,className,src}) => {
+
     let dispatch = useDispatch()
     let handleCart = ()=>{
+        dispatch(sidecart(true))
         dispatch(addtocart({
             title : productName,
-            price : '44$',
-            image : img,
+            price : 44,
+            image : src,
             quantity : 1,
-        })) 
+        }))  
     }
   return (
   <Container>
@@ -49,7 +51,6 @@ const Product = ({productName,className,src}) => {
                 </Flex>
        </div>
    </div>
-   
   </Container>
   )
 }
