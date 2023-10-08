@@ -40,7 +40,7 @@ const Cartpage = () => {
                     <li className='flex items-center w-6/12'>
                         <button><RxCross2 onClick={()=>dispatch(remove(item))}/></button>
                         <Image className="w-100 h-100 ml-10 mr-5" src={item.image}/>
-                        <span className='font-dm font-bold text-base text-black'>{item.title}</span>
+                        <span className='font-dm font-bold text-base text-black '>{item.title}</span>
                     </li>
     
                     <li className='font-dm font-bold text-xl text-black w-3/12 '>{item.price}$</li>
@@ -67,17 +67,29 @@ const Cartpage = () => {
                     </ul>
                     <ul className='flex justify-between py-4 px-5 border border-solid border-ash0'>
                         <li><PortionHeading text='Shiping cost'/></li>
-                        <li className='font-dm text-base font-normal'>10$</li>
+                        <li className='font-dm text-base font-normal'>
+                        {subTotal>1000 ?
+                         "free"
+                           :
+                         "10$"    
+                        }
+                        </li>
                     </ul>
                     <ul className='flex justify-between py-4 px-5 border border-solid border-ash0'>
                         <li><PortionHeading text='Total'/></li>
-                        <li className='font-dm text-base font-normal'>{subTotal+10}$</li>
+                        <li className='font-dm text-base font-normal'>
+                        {subTotal>1000 ?
+                         <span>{subTotal}$</span>
+                           :
+                        <span>{subTotal+10}$</span>
+                        }
+                        </li>
                     </ul>
             </div>
             </div>
             </>  
            :
-           <SubHeading text="The Cart is Empty Now Please Select Some Product" className="text-center mt-10"/>
+           <SubHeading text="The Cart is Empty Now Please Add To Cart Some Product" className="text-center mt-10"/>
            }
            
         </Container>
